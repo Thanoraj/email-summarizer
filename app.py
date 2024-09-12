@@ -29,6 +29,7 @@ if submit_button:
 
         # Loop through the generator and display emails as they are fetched
         for mail in email_generator:
+            print(mail)
             with placeholder.container():
                 st.subheader(f"From: {mail['from']}")
                 st.write(f"Date: {mail['date']}")
