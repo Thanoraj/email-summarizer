@@ -24,13 +24,10 @@ if submit_button:
         # Call the generator function
         email_generator = fetch_emails_generator(user, password, number_of_emails)
 
-        # Create a placeholder to update with each email summary
-        placeholder = st.empty()
-
-        # Loop through the generator and display emails as they are fetched
+        # Create a placeholder to append each email summary
         for mail in email_generator:
-            print(mail)
-            with placeholder.container():
+            # Display the emails one after the other without clearing previous ones
+            with st.container():
                 st.subheader(f"From: {mail['from']}")
                 st.write(f"Date: {mail['date']}")
                 st.write(f"Subject: {mail['subject']}")
